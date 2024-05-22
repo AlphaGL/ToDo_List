@@ -1,0 +1,72 @@
+{% extends 'base/main.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To Do List</title>
+</head>
+<body>
+    {% block body %}
+    <style>
+
+    </style>
+    <section>
+        <div class="container" style="background-color: rgb(60, 5, 224); border-radius:2%;">
+            {% if request.user.is_authenticated %}
+            <hr>
+            <a style="color:#fff; margin-left:80%; text-decoration:none; " href="{% url 'logout' %}">Logout</a>
+                <p style="color: #fff; text-align:center;">
+                    Hello {{request.user}}
+                </p>
+                <p style="color: #fff; text-align:center; padding-bottom:20px;">
+                    You have {{count}} Incomplete Task(s)
+                </p>
+        </div>
+                <center>
+                    <div>
+                        <h1>
+                      To do list:
+                    </>
+                    <a style="text-decoration:none; " href="{% url 'task-create' %}"><span style="color:red;">Add Task</span></a>
+                        </h1>
+                    <br>
+                    <br>
+                    <div>
+                        <form method="GET" action="">
+                            <input style="width: 50%; height:70%;" type="text" name="search-area" id="" placeholder="Search Tasks" value="{{search_input}}">
+                            <input style="background-color: green; color:#fff;" type="submit" value="Search">
+            
+                        </form>
+                    </div>
+        
+        
+                    <table>
+                        <tr>
+                            <th>Items</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {% for task in tasks %}
+                        <tr>
+                            <td>{{task.title}}</td>
+                            <!-- <td><a href="{% url 'task' task.id %}">View</a></td> -->
+                            <td style="margin-left: 10px;"><a style="text-decoration: none;" href="{% url 'task-update' task.id %}"><span style="color: rgb(0, 21, 255);">Edit</span></a></td>
+                            <td style="margin-left: 10px;"><a style="text-decoration: none;" href="{% url 'task-delete' task.id %}"><span style="font-size:large;">&#215;</span></a></td>
+                        </tr>
+                        {% empty %}
+                            <h3>
+                                No Item(s) in list
+                            </h3>
+                        {% endfor %}
+                    </table>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <hr></div>
+                </center>
+    </section>
+    {% endblock %}
+</body>
+</html>

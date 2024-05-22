@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+   <div style="background-color: rgb(193, 251, 160); padding:20px;">
+    <center>
+        <h3 style="color: red; font-size:larger;">
+            Task form
+        </h3>
+        <a style="text-decoration: none;" href="{% url 'tasks' %}"><span style="color: brown;">Go Back</span></a>
+        <form method="POST" action="">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input style="background-color: green; color:#fff;" type="submit" value="submit">
+        </form>
+    </center>
+   </div>
+{% endblock %}
+</body>
+</html>

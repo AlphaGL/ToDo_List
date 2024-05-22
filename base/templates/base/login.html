@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+
+
+{% block body %}
+<div style="background-color: rgb(192, 222, 252);">
+    <center>
+        <h1 style="color: red; padding-top:20px;">
+            Login
+        </h1>
+        <form method="POST" action="">
+        
+            {{form.as_p}}
+            {% csrf_token %}
+            <input style="background-color: green; color: #fff; margin:20px;" type="submit" value="Login">
+        </form>
+        
+        
+        <p style="padding-bottom: 20px;">
+            Don't have an account? <a style="text-decoration: none;" href="{% url 'register' %}"><span style="color: red;">Register</span></a>
+        </p>
+    </center>
+</div>
+{% endblock %}
