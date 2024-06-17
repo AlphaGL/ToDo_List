@@ -1,0 +1,38 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+          <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+          <a href="{% url 'beverage' %}">Beverage (3)</a>
+          <a href="{% url 'desert' %}">Desert (3)</a>
+          <a href="{% url 'maincourse' %}">Main-course (3)</a>
+          <a href="{% url 'salad' %}">Salad (3)</a>
+          <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+        </div>
+      </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+        <a href="/public/html/recipes/cake.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/desserts.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Cake</h5>
+          <p>Prep : 1hr</p>
+        </a>
+        <a href="/public/html/recipe-category/desert.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/Donuts.webp" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Creamy Donuts</h5>
+          <p>Prep : 30min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

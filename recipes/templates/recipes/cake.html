@@ -1,0 +1,83 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+    <main class="page">
+        <div class="recipe-page">
+            <section class="recipes">
+                <img src="/static/assets/images/desserts.jpg" class="img-fluid img recipes-img" alt="">
+                <article class="recipe-info">
+                    <h2>Cake</h2>
+                    {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+          
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+                    {% endif %}
+                    <br>
+                    <p>
+                        Cake is a sweet baked dessert made from flour, sugar, eggs, butter, and other
+                        ingredients. It comes in various flavors and forms, from simple sponge cakes to elaborate layer
+                        cakes.
+                        Cakes have been part of celebrations and special occasions for centuries, with
+                        different
+                        cultures having their own traditional cake recipes and customs.
+                        Cakes are indulgent treats high in sugar and calories. While they provide
+                        energy, they should be enjoyed in moderation as part of a balanced diet.
+                    </p>
+                    <div class="recipe-icons">
+                        <article>
+                            <i class="fas fa-clock"></i>
+                            <h5>prep time</h5>
+                            <p>30 min.</p>
+                        </article>
+                        <article>
+                            <i class="fas fa-user-friends"></i>
+                            <h5>cook time</h5>
+                            <p>15 min.</p>
+                        </article>
+                    </div>
+                    <div class="recipe-tags">
+                        Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+                        <a href="{% url 'beverage' %}">Beverage (3)</a>
+                        <a href="{% url 'desert' %}">Desert (3)</a>
+                        <a href="{% url 'maincourse' %}">Main-course (3)</a>
+                        <a href="{% url 'salad' %}">Salad (3)</a>
+                        <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <section class="recipe-content">
+            <article>
+                <h4>Instructions</h4>
+                <div class="instruction">
+                    <header>
+                        <p>Step 1
+                        </p>
+                    </header> 
+                    <p>Cream butter and sugar together. Beat in eggs one at a time, then add vanilla extract.</p>
+                </div><hr>
+                <div class="instruction">
+                    <header>
+                        <p>Step 2</p>
+                    </header>
+                    <p> Mix in flour and baking powder alternately with milk until batter is smooth.</p>
+                </div> <hr>
+                <div class="instruction">
+                    <header>
+                        <p>Step 3</p>
+                    </header>
+                    <p> Pour into
+                        greased cake pans and bake until a toothpick inserted into the center comes out clean.</p>
+                </div>
+            </article>
+            <article class="second-column">
+                <div>
+                    <h4>Ingredients</h4>
+                    <p class="ingredient">Flour, sugar, eggs, butter, baking powder, vanilla extract, milk.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}

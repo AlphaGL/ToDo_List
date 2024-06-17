@@ -1,0 +1,75 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/meatballs.jpg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Meat Balls</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Meatballs are savory, bite-sized balls made from ground meat mixed with seasonings and binders like
+            breadcrumbs or eggs. They are often served with pasta, on sandwiches, or as appetizers.
+            Meatballs are a staple in Italian cuisine and are also popular in many other cultures around the world,
+            including Swedish, Turkish, and Chinese cuisines.
+            Meatballs can be a good source of protein and essential nutrients like iron and B vitamins, depending on the
+            type of meat used and the cooking method.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>8 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p>Mix all ingredients together in a bowl. Roll mixture into small balls.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p> Bake in the oven or cook in a skillet until browned and cooked through.</p>
+        </div> 
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Ground meat (beef, pork, or a mix), breadcrumbs, egg, minced onion, garlic powder, salt,
+            pepper, Italian seasoning.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

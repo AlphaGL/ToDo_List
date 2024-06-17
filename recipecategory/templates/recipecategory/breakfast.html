@@ -1,0 +1,29 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+            <a href="{% url 'breakfast' %}">Breakfast (1)</a>
+            <a href="{% url 'lunch' %}">Lunch (2)</a>
+            <a href="{% url 'dinner' %}">Dinner (3)</a>
+        </div>
+    </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+        <a href="{% url 'omelette' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/breakfast.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Omelette</h5>
+          <p>Prep : 10min | Cook : 5min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+ {% endblock %}

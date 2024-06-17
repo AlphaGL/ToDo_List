@@ -1,0 +1,93 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+          <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+          <a href="{% url 'beverage' %}">Beverage (3)</a>
+          <a href="{% url 'desert' %}">Desert (3)</a>
+          <a href="{% url 'maincourse' %}">Main-course (3)</a>
+          <a href="{% url 'salad' %}">Salad (3)</a>
+          <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+        </div>
+      </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/news2.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Vegan BBQ Ribs</h5>
+          <p>Prep : 30min | Cook : 20min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/latest recieps corn.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Roasted Corn with Salad</h5>
+          <p>Prep : 6min | Cook : 15min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/recipe-4.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Pancakes With strawberry</h5>
+          <p>Prep : 5min | Cook : 10min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/popular3.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Tsire (Suya)</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/croissant.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Baked Croissant</h5>
+          <p>Prep : 6min | Cook : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/sharwama.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Sharwama</h5>
+          <p>Prep : 10min | Cook : 20min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/latest dishes1.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Nigerian Jollof with Smoked Fish</h5>
+          <p>Prep : 30min | Cook : 45min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/popular2.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Korean Tacos</h5>
+          <p>Prep : 45min | Cook : 30min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/nigerian beef stew.webp" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Nigerian Beef Stew</h5>
+          <p>Prep : 1hr | Cook : 30min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/recipe-2.jpeg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Greek Ribs</h5>
+          <p>Prep : 10min | Cook : 15min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/peppered snail.jpg" alt=""
+          class="img recipe-img img-fluid"></div>
+          <h5>Peppered Snail</h5>
+          <p>Prep : 20min | Cook : 10min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  {% endblock %}

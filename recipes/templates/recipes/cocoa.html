@@ -1,0 +1,75 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/popular6.jpg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Cocoa</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Cocoa coffee is a delicious beverage made by adding cocoa powder to hot brewed coffee. It offers a rich and
+            indulgent flavor with a hint of chocolate.
+            Cocoa coffee is often enjoyed as a cozy treat during cold weather or as a dessert beverage. It can also be
+            customized with additions like whipped cream or marshmallows.
+            Cocoa coffee provides antioxidants from cocoa powder and a moderate amount of caffeine from coffee, along
+            with potential health benefits associated with both ingredients when consumed in moderation.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>8 min.</p>
+            </article>
+            <!-- <article>
+              <i class="far fa-clock"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article> -->
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p> Stir cocoa powder into hot brewed coffee until dissolved.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p>Add sugar to taste if desired. Stir in milk or cream for added creaminess.</p>
+        </div>
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Hot brewed coffee, cocoa powder, sugar (optional), milk or cream (optional).</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

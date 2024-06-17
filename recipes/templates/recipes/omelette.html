@@ -1,0 +1,88 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/breakfast.jpg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Omelette</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            An omelette is a classic dish made by whisking eggs with milk and cooking them in a skillet until set. It
+            can be filled with various ingredients like cheese, vegetables, or meats.
+            Omelettes have been enjoyed for centuries and are a versatile dish found in cuisines around the world, from
+            French omelettes to Spanish tortillas.
+            Omelettes are a good source of protein and can be packed with nutrients depending on the fillings used. They
+            can be made healthier by incorporating vegetables and using less oil or cheese.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>30 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags :<a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p>Whisk eggs with milk, salt, and pepper.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p> Heat butter or oil in a skillet over medium heat.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 3</p>
+          </header>
+          <p> Pour in egg mixture. As eggs start to set, add fillings to one half of the omelette.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 4</p>
+          </header>
+          <p>Fold the other half over the fillings. Cook until eggs are fully set.</p>
+        </div>
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient"> Eggs, milk, salt, pepper, butter or oil, fillings (such as cheese, vegetables, ham).
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

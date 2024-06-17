@@ -1,0 +1,56 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+          <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+          <a href="{% url 'beverage' %}">Beverage (3)</a>
+          <a href="{% url 'desert' %}">Desert (3)</a>
+          <a href="{% url 'maincourse' %}">Main-course (3)</a>
+          <a href="{% url 'salad' %}">Salad (3)</a>
+          <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+        </div>
+      </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+        <a href="/public/html/recipes/meatballs.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/meatballs.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Meat-balls</h5>
+          <p>Prep : 8min | Cook : 15min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/meat pie.webp" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Meat Pie</h5>
+          <p>Prep : 15min | Cook : 15min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/lates dishes cake.jpeg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Chocolate Cake</h5>
+          <p>Prep : 35min | Cook : 25min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/popular5.jpeg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Bean Buns (Akara)</h5>
+          <p>Prep : 20min | Cook : 2min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/latest dishes2.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Spicy Cow Foot (Nkwobi)</h5>
+          <p>Prep : 45min | Cook : 30min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  {% endblock %}

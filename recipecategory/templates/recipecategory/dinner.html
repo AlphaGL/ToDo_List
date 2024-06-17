@@ -1,0 +1,48 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+            <a href="{% url 'breakfast' %}">Breakfast (1)</a>
+            <a href="{% url 'lunch' %}">Lunch (2)</a>
+            <a href="{% url 'dinner' %}">Dinner (3)</a>
+        </div>
+    </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+
+        <a href="{% url 'yam' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/yam porridge.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Yam Porridge</h5>
+          <p>Prep : 30min | Cook : 15min</p>
+        </a>
+        <a href="{% url 'jollof' %}" class="recipe">
+          <div class="rep-con"><img
+            src="/static/assets/images/Jollo rice.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Jollof Rice</h5>
+          <p>Prep : 30min | Cook : 20min</p>
+        </a>
+        <a href="{% url 'soupandstew' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/soups&stews.jpg" alt=""
+            class="img recipe-img img-fluid"></div>
+          <h5>Soup & Stew</h5>
+          <p>Prep : Varies | Cook : Varies</p>
+        </a>
+        <!-- <a href="single-recipe.html" class="recipe"><img src="/public/assets/recipes/recipe-4.jpeg" alt=""
+        class="img recipe-img inmg-fluid">
+      <h5>Strawberry Pancakes</h5>
+      <p>Prep : 5min | Cook : 10min</p>
+    </a> -->
+      </div>
+    </section>
+  </main>
+{% endblock %}

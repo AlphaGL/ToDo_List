@@ -1,0 +1,22 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+    <main class="page">
+        <div class="marquee mb-3">
+            <spanx>
+                Food News Report: Over 90% of People Say Food News Influences Their Cooking Choices! Stay Informed and
+                Elevate Your Culinary Skills with Our Latest Recipes and Insights!
+            </spanx>
+        </div>
+        <div newss>
+            <!-- <rssapp-imageboard id="Zg9ZYsBuUHUjJpVi"></rssapp-imageboard>
+            <script src="https://widget.rss.app/v1/imageboard.js" type="text/javascript" async></script> -->
+            <rssapp-wall id="vjyzIacJzIdXL2JW"></rssapp-wall>
+            <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+            <button class="btn btn-block mt-3 mb-5">
+                <a href="https://www.foodsafetynews.com/">View More</a>
+            </button>
+        </div>
+    </main>
+    {% endblock %}

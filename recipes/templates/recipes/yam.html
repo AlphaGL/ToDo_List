@@ -1,0 +1,97 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/yam porridge.jpg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Yam Porridge</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Yam porridge is a hearty and comforting dish made by simmering yam cubes in a flavorful broth with spices,
+            vegetables, and sometimes meat or fish.
+            Yam porridge is a popular West African dish, especially in Nigeria and Ghana, where yams are a staple crop.
+            Yam porridge is rich in carbohydrates, fiber, and vitamins, making it a satisfying and nutritious meal
+            option.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>30 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <p></p>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p>Peel and cut yam into cubes.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p>In a pot, heat palm oil and sauté onions, tomatoes, and bell peppers until softened.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 3</p>
+          </header>
+          <p> Add seasoning and salt to taste.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 4</p>
+          </header>
+          <p> Add seasoning and salt to taste.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 5</p>
+          </header>
+          <p> Add yam cubes and enough water to cover.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 6</p>
+          </header> 
+          <p>Cook until yam is tender and the porridge thickens.</p>
+        </div>
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Yam, palm oil, onions, tomatoes, bell peppers, seasoning (such as bouillon cubes), salt,
+            water.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

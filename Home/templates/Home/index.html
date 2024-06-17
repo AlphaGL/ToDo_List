@@ -1,0 +1,116 @@
+  {% extends 'Home/base.html' %}
+  
+  {% block content %}
+  {% load static %}
+  {% if user.is_authenticated %}
+
+  <div class="container-fluid"> 
+    <div class="user">
+      <span class="btn btn-block mt-3 mb-5">
+        hello {{request.user}}
+   </div>
+      </span>  
+  </div>
+  
+  {% endif %}
+  <main class="page">
+    <!-- slideshow -->
+    <section id="demo" class="carousel slide">
+      <!-- indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <!-- slide show images -->
+      <div class="carousel-inner ">
+        <div class="carousel-item active first">
+          <img class="d-block w-100" src="{% static 'assets/images/carousel1.jpg' %}" alt="Leopard">
+          <div class="carousel-caption">
+            <h2>Feast Your Eyes</h2>
+            <p>Discover Mouthwatering Recipes Around the World that Satisfies your Food Cravings!
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item second">
+          <img class="d-block w-100" src="/static/assets/images/carousel2.jpg" alt="Leopard">
+          <div class="carousel-caption">
+            <h2>Quench Your Thirst</h2>
+            <p>Cool and Refreshing Beverage Recipes to Tingle your Taste Buds!</p>
+          </div>
+        </div>
+        <div class="carousel-item third">
+          <img class="d-block w-100" src="/static/assets/images/carousel3.jpg" alt="Leopard">
+          <div class="carousel-caption">
+            <div class="carousel-item active">
+             <h2>Nature's Candy</h2>
+            <p>Sweet and Juicy Fruit Creations Straight from the Orchard!</p>
+           </div>
+          </div>
+        </div>
+      </div>
+      <a href="#demo" class="carousel-control-prev " data-slide="prev">
+        <span class="carousel-control-prev-icon f"></span>
+      </a>
+      <a href="#demo" class="carousel-control-next " data-slide="next">
+        <span class="carousel-control-next-icon f"></span>
+      </a>
+    </section>
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Latest Recipes</h4>
+        <div class="tags-list">
+          <a target="dashboard" href="{% url 'breakfast' %}">Breakfast (1)</a>
+          <a href="{% url 'lunch' %}">Lunch (2)</a>
+          <a href="{% url 'dinner' %}">Dinner (3)</a>
+      </div>
+      </div>
+
+    <!-- <iframe name="dashboard"></iframe> -->
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+          
+      <div class="recipes-list">
+        <a href="{% url 'tsire' %}" class="recipe">
+          <div class="rep-con">
+            <img src="/static/assets/images/popular3.jpeg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Tsire (Suya)</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+        <a href="{% url 'jollof' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/latest dishes1.jpeg" alt=""
+              class="img recipe-img img-fluid"></div>
+          <h5>Nigerian Jollof with Smoked Fish</h5>
+          <p>Prep : 30min | Cook : 1hr</p>
+        </a>
+        <a href="{% url 'salad' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/salads.jpg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Salads</h5>
+          <p>Prep : 10min | Cook : 15mins</p>
+        </a>
+        <a href="{% url 'soupandstew' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/soups&stews.jpg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Soup & Stew</h5>
+          <p>Prep : 30min | Cook : 30min - 1hr</p>
+        </a>
+        <a href="{% url 'straw' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/strawberry salad.jpeg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Strawberry Salad</h5>
+          <p>Prep : 30min | Cook : 15min</p>
+        </a>
+        <a href="{% url 'yam' %}" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/yam porridge.jpg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Yam Porridge</h5>
+          <p>Prep : 30min | Cook : 15min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  {% endblock %}

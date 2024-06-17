@@ -1,0 +1,44 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <!-- recipe category -->
+    <section class="recipes-container">
+      <!-- recipe tags -->
+      <div class="tags-container">
+        <h4>Recipe Categories</h4>
+        <div class="tags-list">
+          <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+          <a href="{% url 'beverage' %}">Beverage (3)</a>
+          <a href="{% url 'desert' %}">Desert (3)</a>
+          <a href="{% url 'maincourse' %}">Main-course (3)</a>
+          <a href="{% url 'salad' %}">Salad (3)</a>
+          <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+        </div>
+      </div>
+      <!-- recipe contents -->
+      <!-- <h4>Popular Recipes</h4> -->
+      <div class="recipes-list">
+        <a href="/public/html/recipes/cocoa.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/popular6.jpg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Cocoa Coffee</h5>
+          <p>Prep : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/cucmber.jpg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Cucumber Gin & Tonic</h5>
+          <p>Prep : 4min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <div class="rep-con"><img src="/static/assets/images/palm wine.jpeg" alt="" class="img recipe-img img-fluid">
+          </div>
+          <h5>Palm Wine</h5>
+          <p>Prep : 8min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

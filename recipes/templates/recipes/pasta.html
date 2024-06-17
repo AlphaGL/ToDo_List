@@ -1,0 +1,82 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/pasta pesto farfelle.jpg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Pasta Pesto Farfelle</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Pasta Pesto Farfalle is a delicious Italian dish featuring farfalle pasta (bowtie pasta) tossed in a vibrant
+            basil pesto sauce, typically made with fresh basil, garlic, pine nuts, Parmesan cheese, and olive oil.
+            Pesto originated in Genoa, Italy, and is a popular sauce used in Italian cuisine, often paired with various
+            types of pasta.
+            This dish offers a good balance of carbohydrates, healthy fats from olive oil and pine nuts, and some
+            protein from the Parmesan cheese. It can be made even healthier by using whole wheat pasta.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>30 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <p></p>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p> Cook farfalle pasta according to package instructions.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p> Drain pasta and toss with basil pesto sauce until evenly coated.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 3</p>
+          </header>
+          <p>Serve topped with grated Parmesan cheese and pine nuts if desired.</p>
+        </div> 
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Farfalle pasta, basil pesto sauce, grated Parmesan cheese, pine nuts (optional).</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

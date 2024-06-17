@@ -1,0 +1,86 @@
+{% extends 'Home/base.html' %}
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/popular3.jpeg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Tsire (Suya)</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Tsire Suya is a popular Nigerian street food consisting of skewered and grilled meat (usually beef or
+            chicken) seasoned with a spicy peanut marinade and served with sliced onions and spicy pepper sauce.
+            Suya is a beloved snack in Nigeria and is often enjoyed as a quick bite or as part of a social gathering.
+            Tsire Suya provides protein from the meat and healthy fats from the peanut marinade. It can be a flavorful
+            and satisfying snack or meal option.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>30 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <p></p>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p> Cut meat into thin strips and thread onto skewers.
+          </p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p>Mix peanut butter with ground ginger, ground garlic, cayenne pepper, and salt to make a marinade.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 3</p>
+          </header>
+          <p> Coat meat skewers with marinade and let sit for at least an hour.</p>
+        </div> <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 4</p>
+          </header>
+          <p> Grill skewers until meat is cooked through and slightly charred.</p>
+        </div> 
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Beef or chicken, peanut butter, ground ginger, ground garlic, cayenne pepper, salt,
+            skewers.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

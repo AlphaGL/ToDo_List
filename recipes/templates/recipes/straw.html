@@ -1,0 +1,79 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+    <div class="recipe-page">
+      <section class="recipes">
+        <img src="/static/assets/images/strawberry salad.jpeg" class="img-fluid img recipes-img" alt="">
+        <article>
+          <h2>Strawberry salad</h2>
+          {% if user.is_authenticated %}
+          <!-- <p class="btn btn-success"><a href="https://paystack.com/pay/flavourfusiona">Place order</a></p> -->
+
+
+
+          {% else %}
+          <a href="{% url 'login' %}" class="btn btn-sucess">Login or SignUp To Place Order</a>
+          {% endif %}
+          <br>
+          <p>
+            Strawberry salad is a refreshing dish made with fresh strawberries, mixed greens, crumbled cheese (such as
+            feta or goat cheese), nuts, and a tangy balsamic vinaigrette dressing.
+            Strawberries are not only delicious but also packed with vitamins, minerals, and antioxidants, making them a
+            nutritious addition to salads.
+            This salad is low in calories and rich in fiber, vitamins, and antioxidants from the strawberries and
+            greens. Nuts provide healthy fats and protein, while the cheese adds calcium and flavor.
+          </p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+              <p>30 min.</p>
+            </article>
+            <article>
+              <i class="fas fa-user-friends"></i>
+              <h5>cook time</h5>
+              <p>15 min.</p>
+            </article>
+          </div>
+          <div class="recipe-tags">
+            Tags : <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+            <a href="{% url 'beverage' %}">Beverage (3)</a>
+            <a href="{% url 'desert' %}">Desert (3)</a>
+            <a href="{% url 'maincourse' %}">Main-course (3)</a>
+            <a href="{% url 'salad' %}">Salad (3)</a>
+            <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="recipe-content">
+      <article>
+        <h4>Instructions</h4>
+        <p></p>
+        <div class="instruction">
+          <header>
+            <p>Step 1</p>
+          </header>
+          <p>Wash and slice strawberries. Toss with mixed greens, crumbled feta cheese, and nuts.</p>
+        </div>
+        <hr>
+        <div class="instruction">
+          <header>
+            <p>Step 2</p>
+          </header>
+          <p>Drizzle with balsamic vinaigrette dressing before serving.</p>
+        </div>
+
+      </article>
+      <article class="second-column">
+        <div>
+          <h4>Ingredients</h4>
+          <p class="ingredient">Fresh strawberries, mixed greens, feta cheese, balsamic vinaigrette dressing, nuts (such
+            as walnuts or pecans).</p>
+        </div>
+      </article>
+    </section>
+  </main>
+{% endblock %}

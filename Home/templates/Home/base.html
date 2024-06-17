@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'assets/bootstrap-4.0.0-dist/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/bootstrap-4.0.0-dist/css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="{% url 'home' %}" class="nav-logo">FlavourFusion</a>
+          <button type="button" class="btn nav-btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="{% url 'home' %}" class="nav-link">Home</a>
+          <a href="{% url 'about' %}" class="nav-link">About</a>
+          <a href="{% url 'recipe' %}" class="nav-link">Recipes</a>
+          <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+          
+          {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            <div class="nav-link contact-link">
+              <form class="d-flex">
+                <a class="btn btn-outline-dark" href="https://paystack.com/pay/flavourfusiona"><i class="bi-cart-fill me-1"></i>
+                  Place Order
+                  <span class="badge bg-dark text-white ms-1 rounded-pill"></span></a>
+              </form>
+            </div>
+          
+          {% else %}
+          
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+          
+          
+          
+            <a href="{% url 'register' %}" class="nav-link">SignUp</a>
+          
+
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="container-fluid">
+        <div class="contain">
+          {% if messages %}
+          {% for messages in messages %}
+          
+            <span class="btn btn-sucess">{{ messages }}</span>
+       
+        
+          {% endfor %}
+          {% endif %}
+          
+        </div>
+    </div>
+  </section>
+  {% block content %}
+  
+  {% endblock %}
+
+
+  <footer class="page-footer">
+    <p>&copy; <span id="date"></span>
+      <span class="footer-logo">FlavorFusion</span> Built by David Alfred & Ibeawuchi
+    </p>
+  </footer>
+</body>
+<script src="{% static 'assets/bootstrap-4.0.0-dist/js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap-4.0.0-dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/fontawesome/js/all.min.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</html>

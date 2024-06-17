@@ -1,0 +1,38 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+  <main class="page">
+<!-- recipe category -->
+<section class="recipes-container">
+  <!-- recipe tags -->
+  <div class="tags-container">
+    <h4>Recipe Categories</h4>
+    <div class="tags-list">
+      <a href="{% url 'appetizer' %}">Appetizer (5)</a>
+      <a href="{% url 'beverage' %}">Beverage (3)</a>
+      <a href="{% url 'desert' %}">Desert (3)</a>
+      <a href="{% url 'maincourse' %}">Main-course (3)</a>
+      <a href="{% url 'salad' %}">Salad (3)</a>
+      <a href="{% url 'soupandstew' %}">Soup & Stew (3)</a>
+    </div>
+  </div>
+  <!-- recipe contents -->
+  <!-- <h4>Popular Recipes</h4> -->
+  <div class="recipes-list">
+    <a href="/public/html/recipes/straw.html" class="recipe">
+      <div class="rep-con"><img src="/static/assets/images/strawberry salad.jpeg" alt=""
+        class="img recipe-img img-fluid"></div>
+      <h5>Strawberry Salad</h5>
+      <p>Prep : 25min | Cook : 20min</p>
+    </a>
+    <a href="/public/html/recipe-category/salad.html" class="recipe">
+      <div class="rep-con"><img src="/static/assets/images/latest dishes avacado.jpeg" alt=""
+        class="img recipe-img img-fluid"></div>
+      <h5>Avacado Salad</h5>
+      <p>Prep : 15min | Cook : 20min</p>
+    </a>
+  </div>
+</section>
+  </main>
+{% endblock %}

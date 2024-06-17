@@ -1,0 +1,28 @@
+{% extends 'Home/base.html' %}
+  
+{% block content %}
+{% load static %}
+    <center>
+        <main class="page">
+            <div class="marquee mb-3">
+                <spanx>
+                    <strong>Register</strong> | Please insure you fill <br> in your correct information
+                </spanx>
+            </div>
+            <div newss>
+                <form method="post" action="{% url 'register' %}">
+
+                    {% csrf_token %}
+                    {{ form.as_p}}
+
+                    <button type="submit" class="btn btn-success">SignUp</button>
+                </form>
+            </div>
+            <br>
+            
+            <p>
+                Already have an account? <a style="text-decoration: none;" href="{% url 'login' %}">Login</a>
+            </p>
+        </main>
+    </center>
+    {% endblock %}
